@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "Index2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@foreach (Product item in Model)
+{
+<ul>
+    <li>@item.ProductName</li>
+    <li>@item.Price</li>
+</ul>
+}
+

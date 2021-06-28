@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "LoginTagHelper";
+}
+
+@model UserVM
+
+<form asp-controller="Home" asp-action="LoginTagHelper">
+    <label asp-for="UserName">UserName</label>
+    <input asp-for="UserName" type="text" />
+    <br />
+    <label asp-for="Password">Password</label>
+    <input asp-for="Password" type="password" />
+    <br /><br />
+    <input type="submit" name="name" value="Giriş Yap" />
+    <a asp-controller="Home" asp-action="Details" asp-route-id="5">Detay sayfasını gör</a>
+</form>
+
+<div class="panel-footer">
+    <span>@ViewBag.Message</span>
+</div>

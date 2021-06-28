@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+@model UserVM
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+            {
+
+    @Html.LabelFor(a=>a.UserName)<br />
+    @Html.TextBoxFor(a=>a.UserName)<br />
+    <hr />
+  
+        @Html.LabelFor(a => a.Password)<br />
+        @Html.TextBoxFor(a => a.Password)<br />
+    <br />
+    <input type="submit" value="sign In" />
+
+            }
+
+<div class="panel-footer">
+    <span>@ViewBag.Message</span>
+</div>
