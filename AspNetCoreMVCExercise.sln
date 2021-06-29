@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04-TagHalpers", "04-TagHalp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-StaticFiles", "05-StaticFiles\05-StaticFiles.csproj", "{8BDE6B3E-654C-4E20-ABB9-0AEE32E607DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06-CustomRoute", "06-CustomRoute\06-CustomRoute.csproj", "{59E87AC6-1629-45F3-9EA5-DFF23B3EC066}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{8BDE6B3E-654C-4E20-ABB9-0AEE32E607DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BDE6B3E-654C-4E20-ABB9-0AEE32E607DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BDE6B3E-654C-4E20-ABB9-0AEE32E607DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59E87AC6-1629-45F3-9EA5-DFF23B3EC066}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59E87AC6-1629-45F3-9EA5-DFF23B3EC066}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59E87AC6-1629-45F3-9EA5-DFF23B3EC066}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59E87AC6-1629-45F3-9EA5-DFF23B3EC066}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
