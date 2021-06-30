@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07-CustomRoute", "07-Custom
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08-BundleConfig", "08-BundleConfig\08-BundleConfig.csproj", "{0CA8CE1B-54E6-48C4-807E-EE6474664414}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09-DependencyInjection", "09-DependencyInjection\09-DependencyInjection.csproj", "{7F59297E-1883-42D1-AE3D-0E091D79C481}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09-DependencyInjection", "09-DependencyInjection\09-DependencyInjection.csproj", "{7F59297E-1883-42D1-AE3D-0E091D79C481}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10-DbFirstApproach", "10-DbFirstApproach\10-DbFirstApproach.csproj", "{D058E6D4-5E84-4A09-9837-9B64CAD26AFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{7F59297E-1883-42D1-AE3D-0E091D79C481}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F59297E-1883-42D1-AE3D-0E091D79C481}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F59297E-1883-42D1-AE3D-0E091D79C481}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D058E6D4-5E84-4A09-9837-9B64CAD26AFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D058E6D4-5E84-4A09-9837-9B64CAD26AFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D058E6D4-5E84-4A09-9837-9B64CAD26AFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D058E6D4-5E84-4A09-9837-9B64CAD26AFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
