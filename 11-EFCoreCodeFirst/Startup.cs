@@ -1,4 +1,6 @@
-using _10_DbFirstApproach.Models;
+using _11_EFCoreCodeFirst.EfCoreRepository.Abstract;
+using _11_EFCoreCodeFirst.EfCoreRepository.Concrete;
+using _11_EFCoreCodeFirst.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -10,7 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace _10_DbFirstApproach
+namespace _11_EFCoreCodeFirst
 {
     public class Startup
     {
@@ -18,8 +20,11 @@ namespace _10_DbFirstApproach
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<NorthwindContext>(a => a.UseSqlServer("Server = localhost\\SQLEXPRESS01; Database = Northwind; uid = bilal; pwd = 123"));
+            services.AddDbContext<CoreContext>(options => options.UseSqlServer("Server=localhost\\SQLEXPRESS01;Database=ExerciseCoreCode;uid=bilal;pwd=123"));           
             services.AddControllersWithViews();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+          
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -30,13 +35,14 @@ namespace _10_DbFirstApproach
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name:"default",
-                    pattern:"{controller=Home}/{action=Index}/{id?}"
+                    name:"defaults",
+                    pattern:"{controller=Category}/{action=Index}/{id?}"
                     );
             });
         }
