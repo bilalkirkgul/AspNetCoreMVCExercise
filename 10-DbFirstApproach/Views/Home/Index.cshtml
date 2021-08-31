@@ -5,11 +5,6 @@
 @model List<Category>
 
 
-<ul>
-    @foreach (Category item in Model)
-    {
-        <li>@item.CategoryName</li>
-        <li>@item.Description</li>
-    }
+<partial name="_categoryList"/>
 
-</ul>
+
