@@ -32,17 +32,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (Product item in Model.Products)
-                            {
-                            <tr>
-                                <td>@item.ProductName</td>
-                                <td>@item.UnitPrice</td>
-                                <td>@item.UnitsInStock</td>
-                                <td><a asp-controller="Product" asp-action="Update" asp-route-id="@item.ProductID" class="btn btn-outline-warning">Güncelle</a></td>
-                                <td><a asp-controller="Product" asp-action="Delete" asp-route-id="@item.ProductID" class="btn btn-outline-danger">Sil</a></td>
-
-                            </tr>
-                            }
+                          <partial name="_productList"/>
                         </tbody>
                     </table>
                 </div>

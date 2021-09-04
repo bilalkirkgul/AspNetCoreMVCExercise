@@ -1,0 +1,16 @@
+﻿
+
+@model CategoryProductVM
+
+@foreach (Product item in Model.Products)
+{
+    <tr>
+        <td>@item.ProductName</td>
+        <td>@item.UnitPrice</td>
+        <td>@item.UnitsInStock</td>
+        @*<td><a href="/Product/Update?id=@item.ProductID"  class="btn btn-outline-warning">Güncelle</a></td> @QueryString ile veri gönderme işlemi*@
+        <td><a asp-controller="Product" asp-action="Update" asp-route-id="@item.ProductID" class="btn btn-outline-warning">Güncelle</a></td>
+        <td><a asp-controller="Product" asp-action="Delete" asp-route-id="@item.ProductID" class="btn btn-outline-danger">Sil</a></td>
+
+    </tr>
+}

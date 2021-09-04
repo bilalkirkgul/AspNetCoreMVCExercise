@@ -30,6 +30,7 @@ namespace _11_EFCoreCodeFirst.Controllers
             }
             if (product != null)
             {
+                productVM.ProductID = product.ProductID;
                 productVM.ProductName = product.ProductName;
                 productVM.UnitPrice = product.UnitPrice;
                 productVM.UnitInStock = product.UnitsInStock;
@@ -89,7 +90,7 @@ namespace _11_EFCoreCodeFirst.Controllers
         }
 
 
-        public IActionResult Update(int id = 0)
+        public IActionResult Update(int id)
         {
             if (id == 0)
             {
@@ -99,33 +100,36 @@ namespace _11_EFCoreCodeFirst.Controllers
             return View(ViewModelDoldur(product));
         }
 
-        [HttpPost]
-        public IActionResult Update(ProductVM item,int id)
-        {
 
-            Product product = productRepository.GetProductById(id);
+        [HttpPost]
+        public IActionResult Update(ProductVM item) //View sayfasında productID verdik ama sayfada gizledik. istersek burada parametre içerisinde verip ürünün ıd'sini yakalayabiliriz.
+        {
+            Product updateProduct = null;     
             try
             {
-                product.CategoryID = item.CategoryID;
-                product.ProductName = item.ProductName;
-                product.UnitPrice = item.UnitPrice;
-                product.UnitsInStock = item.UnitInStock;
-                bool check = productRepository.UpdateProduct(product);
-
-                if (check)
+                if (ModelState.IsValid)
                 {
-                    ViewBag.IsSuccess = "Güncelleme işlemi başarılı";
+                    updateProduct = productRepository.GetProductById(item.ProductID);
+                    updateProduct.ProductID = item.ProductID;
+                    updateProduct.CategoryID = item.CategoryID;
+                    updateProduct.ProductName = item.ProductName;
+                    updateProduct.UnitPrice = item.UnitPrice;
+                    updateProduct.UnitsInStock = item.UnitInStock;
 
-                }
+                    bool check = productRepository.UpdateProduct(updateProduct);
+                    if (check)
+                    {
+                        ViewBag.IsSuccess = "Güncelleme işlemi başarılı";
+                    }
+                }            
             }
             catch (Exception)
             {
-
                 ViewBag.IsSuccess = "Güncelleme işlemi yapılamadı";
             }
 
+            return View(item);
 
-            return View(ViewModelDoldur(product));
         }
 
         public IActionResult Delete(int id)
