@@ -7,10 +7,10 @@ namespace _11_EFCoreCodeFirst.Models
 {
     public class Category
     {
-        public Category()
-        {
-            Products = new HashSet<Product>();
-        }
+        //public Category()
+        //{
+        //    Products = new HashSet<Product>();
+        //}
 
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }

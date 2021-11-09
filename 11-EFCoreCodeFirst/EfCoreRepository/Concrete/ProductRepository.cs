@@ -59,6 +59,9 @@ namespace _11_EFCoreCodeFirst.EfCoreRepository.Concrete
             return context.Products.Where(a => a.CategoryID == categoryID).ToList();
         }
 
-       
+        public List<Product> ProductListCategory()
+        {
+            return context.Products.Include(a => a.Category).ToList();
+        }
     }
 }

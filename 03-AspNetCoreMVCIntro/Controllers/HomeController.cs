@@ -15,7 +15,7 @@ namespace _03_AspNetCoreMVCIntro.Controllers
             return View();
         }
 
-        public IActionResult Index2()
+        List<Product> GetProducts()
         {
             List<Product> products = new List<Product>()
             {
@@ -23,8 +23,13 @@ namespace _03_AspNetCoreMVCIntro.Controllers
                 new Product{ ProductId=2,ProductName="karpuz",Price=6},
                 new Product{ ProductId=3,ProductName="Klavye",Price=100}
             };
+            return products;
+        }
 
-            return View(products);
+        public IActionResult Index2()
+        {
+           
+            return View(GetProducts());
         }
     }
 }

@@ -1,8 +1,7 @@
-﻿<ul>
-    @foreach (Category item in Model)
-    {
-        <li>@item.CategoryName</li>
-        <li>@item.Description</li>
-    }
+﻿@model List<Category>
 
-</ul>
+@foreach (var item in Model)
+{
+    <li class="list-group-item"><a class="btn" asp-controller="Category" asp-action="Index" asp-route-id="@item.CategoryId">@item.CategoryName</a></li>
+}
+

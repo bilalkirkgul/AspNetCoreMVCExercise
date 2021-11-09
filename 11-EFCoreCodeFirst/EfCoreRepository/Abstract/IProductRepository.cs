@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace _11_EFCoreCodeFirst.EfCoreRepository.Abstract
 {
-   public interface IProductRepository
+    public interface IProductRepository
     {
         ICollection<Product> Products { get; }
         ICollection<Product> GetProductsByCategoryID(int categoryID);
 
-        public bool InsertProduct(Product product);
-        public bool UpdateProduct(Product product);
+        bool InsertProduct(Product product);
+        bool UpdateProduct(Product product);
 
-        public bool DeleteProduct(int id);
+        bool DeleteProduct(int id);
 
-        public Product GetProductById(int id);
+        Product GetProductById(int id);
+
+        List<Product> ProductListCategory();
     }
 }

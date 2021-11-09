@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@model List<ProductCategoryVM>
+
+<div class="card">
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ProductID</th>
+                    <th>ProductName</th>
+                    <th>Stock</th>
+                    <th>Price</th>
+                    <th>CategoryID</th>
+                    <th>CategoryName</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (ProductCategoryVM item in Model)
+                {
+                    <tr>
+
+                        <td>@item.ProductID</td>
+                        <td>@item.ProductName</td>
+                        <td>@item.UnitInStock</td>
+                        <td>@item.UnitPrice</td>
+                        <td>@item.CategoryID</td>
+                        <td>@item.CategoryName</td>
+                        <td>@item.Description</td>
+                        
+                    </tr>
+
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -40,6 +40,12 @@ namespace _11_EFCoreCodeFirst.Controllers
         }
 
 
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+
         public IActionResult Insert()
         {
             return View(ViewModelDoldur());
@@ -100,28 +106,46 @@ namespace _11_EFCoreCodeFirst.Controllers
             return View(ViewModelDoldur(product));
         }
 
+        Product ProductModel(ProductVM item)
+        {
+            Product product = productRepository.GetProductById(item.ProductID);
+
+            product.ProductID = item.ProductID;
+            product.CategoryID = item.CategoryID;
+            product.ProductName = item.ProductName;
+            product.UnitPrice = item.UnitPrice;
+            product.UnitsInStock = item.UnitInStock;
+
+
+            return product;
+        }
+
+
 
         [HttpPost]
         public IActionResult Update(ProductVM item) //View sayfasında productID verdik ama sayfada gizledik. istersek burada parametre içerisinde verip ürünün ıd'sini yakalayabiliriz.
         {
-            Product updateProduct = null;     
+            Product updateProduct = null;
             try
             {
                 if (ModelState.IsValid)
                 {
-                    updateProduct = productRepository.GetProductById(item.ProductID);
-                    updateProduct.ProductID = item.ProductID;
-                    updateProduct.CategoryID = item.CategoryID;
-                    updateProduct.ProductName = item.ProductName;
-                    updateProduct.UnitPrice = item.UnitPrice;
-                    updateProduct.UnitsInStock = item.UnitInStock;
+                    //updateProduct = productRepository.GetProductById(item.ProductID);
+
+                    //updateProduct.ProductID = item.ProductID;
+                    //updateProduct.CategoryID = item.CategoryID;
+                    //updateProduct.ProductName = item.ProductName;
+                    //updateProduct.UnitPrice = item.UnitPrice;
+                    //updateProduct.UnitsInStock = item.UnitInStock;
+
+                    updateProduct = ProductModel(item);
 
                     bool check = productRepository.UpdateProduct(updateProduct);
                     if (check)
                     {
                         ViewBag.IsSuccess = "Güncelleme işlemi başarılı";
                     }
-                }            
+                }
             }
             catch (Exception)
             {
@@ -129,6 +153,8 @@ namespace _11_EFCoreCodeFirst.Controllers
             }
 
             return View(item);
+
+
 
         }
 

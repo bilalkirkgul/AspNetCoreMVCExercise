@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using _11_EFCoreCodeFirst.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,8 +17,10 @@ namespace _11_EFCoreCodeFirst.ViewModels
         public string ProductName { get; set; }
         public decimal UnitPrice { get; set; }
         public int UnitInStock { get; set; }
+
         public int CategoryID { get; set; }
         public List<SelectListItem> Categories { get; set; }
+
 
     }
 }

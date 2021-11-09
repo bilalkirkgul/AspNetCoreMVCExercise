@@ -31,6 +31,7 @@ namespace _10_DbFirstApproach
             }
 
             app.UseRouting();
+            app.UseStaticFiles();
 
             app.UseEndpoints(endpoints =>
             {

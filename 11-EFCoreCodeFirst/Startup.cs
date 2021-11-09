@@ -42,7 +42,7 @@ namespace _11_EFCoreCodeFirst
             {
                 endpoints.MapControllerRoute(
                     name:"defaults",
-                    pattern:"{controller=Category}/{action=Index}/{id?}"
+                    pattern:"{controller=Home}/{action=Index}/{id?}"
                     );
             });
         }

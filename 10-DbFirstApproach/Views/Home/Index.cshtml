@@ -5,6 +5,39 @@
 @model List<Category>
 
 
-<partial name="_categoryList"/>
 
 
+<div class="container">
+    <div class="card">
+        <div class="card-header text-center">
+            <h3>Ürünler</h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-3">
+                    <ul class="list-group">
+                        <partial name="_categoryList" />
+                    </ul>
+                </div>
+                <div class="col-lg-9">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Ürün Adı</th>
+                                <th>Fiyat</th>
+                                <th>Stok</th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                           @await Component.InvokeAsync("Product")
+                        </tbody>
+
+
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -6,11 +6,13 @@
 
 
 
+
+
 @foreach (Product item in Model)
 {
-<ul>
-    <li>@item.ProductName</li>
-    <li>@item.Price</li>
-</ul>
+<tr>
+    <th>@item.ProductName</th>
+    <th>@item.Price</th>
+</tr>
 }
 

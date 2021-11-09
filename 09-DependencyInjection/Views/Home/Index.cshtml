@@ -16,21 +16,7 @@
                     <th>Price</th>
                 </tr>
             </thead>
-            <tbody>
-
-                @foreach (Product item in Model)
-                {
-                    <tr>
-
-                        <td>@item.ProductID</td>
-                        <td>@item.ProductName</td>
-                        <td>@item.Stock</td>
-                        <td>@item.Price</td>
-                    </tr>
-
-                }
-
-            </tbody>
+            <partial name="_productPartial"/>
         </table>
     </div>
 </div>
