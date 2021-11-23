@@ -1,9 +1,9 @@
 ﻿{
   "iisSettings": {
-    "windowsAuthentication": false, 
-    "anonymousAuthentication": true, 
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:17093",
+      "applicationUrl": "http://localhost:34751",
       "sslPort": 0
     }
   },
@@ -17,6 +17,7 @@
     },
     "_10_DbFirstApproach": {
       "commandName": "Project",
+      "dotnetRunMessages": "true",
       "launchBrowser": true,
       "applicationUrl": "http://localhost:5000",
       "environmentVariables": {

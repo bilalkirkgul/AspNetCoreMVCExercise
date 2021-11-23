@@ -2,42 +2,41 @@
 @{
     ViewData["Title"] = "Index";
 }
-@model List<Category>
 
-
+@model List<Product>
 
 
 <div class="container">
-    <div class="card">
-        <div class="card-header text-center">
-            <h3>Ürünler</h3>
+    <div class="row">
+        <div class="col-lg-3">
+            @await Component.InvokeAsync("Category")
         </div>
-        <div class="card-body">
-            <div class="row">
-                <div class="col-lg-3">
-                    <ul class="list-group">
-                        <partial name="_categoryList" />
-                    </ul>
-                </div>
-                <div class="col-lg-9">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Ürün Adı</th>
-                                <th>Fiyat</th>
-                                <th>Stok</th>
-                               
-                            </tr>
-                        </thead>
-                        <tbody>
-                           @await Component.InvokeAsync("Product")
-                        </tbody>
+        <div class="col-lg-9">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>ProductName</th>
+                        <th>UnitPrice</th>
+                        <th>UnitInStock</th>
 
 
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Product item in Model)
+                    {
+                        <tr>
+                            <td>@item.ProductId</td>
+                            <td>@item.ProductName</td>
+                            <td>@item.UnitPrice</td>
+                            <td>@item.UnitsInStock</td>
 
-                    </table>
-                </div>
-            </div>
+                        </tr>
+                    }
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
+

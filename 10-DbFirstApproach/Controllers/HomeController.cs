@@ -10,17 +10,24 @@ namespace _10_DbFirstApproach.Controllers
     public class HomeController : Controller
     {
         NorthwindContext context;
-
-        public HomeController(NorthwindContext northwind)
+        public HomeController()
         {
-            context = northwind;
+            context = new NorthwindContext();
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int id=0)
         {
-            List<Category> categories = context.Categories.ToList();
+            List<Product> products;
+            if (id == 0)
+            {
+                products = context.Products.ToList();
+            }
+            else
+            {
+                products = context.Products.Where(a => a.CategoryId == id).ToList();
+            }
 
-            return View(categories);
+            return View(products);
         }
     }
 }

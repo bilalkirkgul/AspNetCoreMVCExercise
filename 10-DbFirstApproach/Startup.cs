@@ -18,7 +18,7 @@ namespace _10_DbFirstApproach
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<NorthwindContext>(a => a.UseSqlServer("Server = localhost\\SQLEXPRESS01; Database = Northwind; uid = bilal; pwd = 123"));
+            services.AddDbContext<NorthwindContext>(a => a.UseSqlServer("Server=localhost\\SQLEXPRESS01;Database=Northwind;uid=bilal;pwd=123"));
             services.AddControllersWithViews();
         }
 
@@ -36,9 +36,10 @@ namespace _10_DbFirstApproach
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name:"default",
-                    pattern:"{controller=Home}/{action=Index}/{id?}"
+                    name: "default",
+                    pattern:"{controller=home}/{action=Index}/{id?}"
                     );
+                
             });
         }
     }

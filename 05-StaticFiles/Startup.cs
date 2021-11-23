@@ -26,7 +26,7 @@ namespace _05_StaticFiles
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseStaticFiles();
+            app.UseStaticFiles(); //wwwroote için lazým
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
