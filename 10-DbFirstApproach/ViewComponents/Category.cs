@@ -17,7 +17,7 @@ namespace _10_DbFirstApproach.ViewComponents
             context = new NorthwindContext();
         }
 
-        public ViewViewComponentResult Invoke()
+        public IViewComponentResult Invoke()
         {
             var model = context.Categories.ToList();
             return View(model);

@@ -89,8 +89,9 @@ namespace _04_TagHalpers.Controllers
        
         }
 
-        public IActionResult Details()
+        public IActionResult Details(string name)
         {
+            ViewBag.Message = name;
             return View();
         }
     }
